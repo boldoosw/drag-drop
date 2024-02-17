@@ -58,9 +58,9 @@ const DndExample = () => {
   }
   return (
     <DndContext onDragEnd={onDragEnd}>
-      <h1 className="text-center mt-8 mb-3 font-bold text-[25px] ">
+      {/* <h1 className="text-center mt-8 mb-3 font-bold text-[25px] ">
         Drag and Drop Application
-      </h1>
+      </h1> */}
       <div className="w-full flex gap-4 justify-between my-5 mx-4 flex-col lg:flex-row">
         {data.map((val, index) => {
           return (
