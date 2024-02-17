@@ -118,7 +118,7 @@ const navItems: NavItem[] = [
     link: "/custom_test/quiz",
   },
   {
-    label: "Судалгаа",
+    label: "Асуулга",
     link: "/job",
   },
   {
