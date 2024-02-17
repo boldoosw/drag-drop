@@ -10,7 +10,7 @@ function JobCards() {
       img: card1,
       title: "ТИЙМ",
       description: "",
-      link: "/test",
+      link: "/dragdrop",
     },
     {
       img: card2,

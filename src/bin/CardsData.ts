@@ -5,44 +5,46 @@ export const cardsData = [
     components: [
       {
         id: 100,
-        name: "material ui"
+        name: "Цалин өндөр",
+         bg: "bg-green-300 mx-1 px-1 py-1 my-1 w-full" 
       },
       {
         id: 200,
-        name: "bootstrap"
+        name: "Ажлын байрны олдоц",
+        bg: "bg-blue-300 mx-1 px-1 py-1 my-1 w-full"
       },
-    ]
-  },
-  {
-    id: 1,
-    title: "Javascript Librarys",
-    components: [
       {
         id: 300,
-        name: "react"
+        name: "Миний сонирхолыг татдаг",
+        bg: "bg-yellow-300 mx-1 px-1 py-1 my-1 w-full"
       },
       {
         id: 400,
-        name: "node"
+        name: "Эцэг эх, бусдын зөвлөгөөг дагасан",
+        bg: "bg-gray-400 mx-1 px-1 py-1 my-1 w-full"
+      },
+      {
+        id: 500,
+        name: "Нэр хүндтэй мэргэжил",
+        bg: "bg-orange-400 mx-1 px-1 py-1 my-1 w-full"
       },
     ]
   },
-  {
-    id: 2,
-    title: "react helping Librarys",
-    components: [
-      {
-        id: 500,
-        name: "redux"
-      },
-      {
-        id: 600,
-        name: "recoil"
-      },
-    ]
-  }
+  // {
+  //   id: 1,
+  //   title: "Javascript Librarys",
+  //   components: [
+  //     {
+  //       id: 300,
+  //       name: "react"
+  //     },
+  //     {
+  //       id: 400,
+  //       name: "node"
+  //     },
+  //   ]
+  // },
+  
 
 
 ]
-
-
