@@ -145,7 +145,7 @@ export default function Navbar() {
         <Link href="/">
           <Image className="w-12" src={logonew} alt=" logo" />
         </Link>
-        <div className="uppercase font-bold font-mono text-lg text-neutral-600">
+        <div className="uppercase font-bold font-mono text-lg text-neutral-400">
           Мэргэжил сонголтын онлайн тест
         </div>
         {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
