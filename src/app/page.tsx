@@ -18,7 +18,6 @@ export default function Home() {
         <div className="flex flex-col  bg-white justify-center py-6 px-10 items-center rounded-tr-[35px] rounded-bl-[35px] shadow-2xl md:min-h-[340px] w-full card-item-div  min-h-[260px]">
           <Image className="h-[80px] sm:h-full " src={start_home} alt="logo" />
         </div>
-        {/* <DndExample /> */}
         <div className="mt-4">
           <button
             type="button"

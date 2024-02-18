@@ -12,8 +12,6 @@ type Props = {
   questions: QuestionsState;
 };
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-
 const Quiz = ({ questions }: Props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
   const [userAnswers, setUserAnswers] = React.useState<Record<number, string>>(
@@ -32,6 +30,9 @@ const Quiz = ({ questions }: Props) => {
     userAnswers[currentQuestionIndex] = answer;
 
     const propertyNames = Object.keys(userAnswers);
+
+    if (propertyNames.length === questions.length)
+      setCurrentQuestionIndex(questions.length - 1);
     console.log(userAnswers);
 
     const answer_index = div_id.charAt(div_id.length - 1);
@@ -79,18 +80,17 @@ const Quiz = ({ questions }: Props) => {
                 currentQuestionIndex={i}
                 userAnswer={userAnswers[currentQuestionIndex]}
                 onClick={handleOnAnswerClick}
-                // onChange={handleOnAnswerClick}
               />
             );
           })}
         </div>
         <div className="flex  mt-4 ">
-          {currentQuestionIndex === 2 ? (
+          {currentQuestionIndex === questions.length - 1 ? (
             <Button
               text="Дуусгах"
               btn_next={false}
               onClick={function (): void {
-                throw new Error("Function not implemented.");
+                console.log("Function not implemented.");
               }}
               // onClick={
               //   currentQuestionIndex === 2
