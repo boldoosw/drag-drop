@@ -26,19 +26,15 @@ const CustomCard: React.FC<Props> = ({
   onClick,
 }) => {
   return (
-    <div
-      id={question.question}
-      key={question.question}
-      className="md:w-full gap-4 md:grid-cols-2 "
-    >
+    <div key={question.question} className="md:w-full gap-2 md:grid-cols-2 ">
       <div
         id={question.question}
-        className="bg-sky-100 flex
+        className="bg-white flex
         flex-row justify-between items-center cursor-pointer 
             select-none  max-w-[400] w-full  rounded-[10px]
               border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 "
       >
-        <div className="w-full m-2 ">{question.question}</div>
+        <div className="w-full m-1 ">{question.question}</div>
         <div
           key={
             question.question +
@@ -66,7 +62,7 @@ const CustomCard: React.FC<Props> = ({
               }
               className={`flex items-center mr-1 rounded `}
             >
-              <h5 className=" m-2 text-md tracking-tight text-gray-900 dark:text-white">
+              <h5 className=" m-1 text-md tracking-tight text-gray-900 dark:text-white">
                 {answer}
               </h5>
             </div>

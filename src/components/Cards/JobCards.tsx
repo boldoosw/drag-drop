@@ -16,7 +16,7 @@ function JobCards() {
       img: card2,
       title: "ҮГҮЙ",
       description: " ",
-      link: "",
+      link: "/dragdrop_no",
     },
   ];
   return (

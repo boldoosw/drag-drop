@@ -1,6 +1,6 @@
 "use client";
 
-import { cardsData } from "@/bin/CardsData";
+import { cardsData } from "@/bin/CardsData2";
 import { useEffect, useState } from "react";
 import { Draggable, DropResult, Droppable } from "react-beautiful-dnd";
 import LoadingSkeleton from "./LoadingSkeleton";
@@ -14,7 +14,7 @@ interface Cards {
     bg: string;
   }[];
 }
-const DndExample = () => {
+const DndExample2 = () => {
   const bColor = [
     "bg-green-300",
     "bg-blue-300",
@@ -71,9 +71,7 @@ const DndExample = () => {
                   {...provided.droppableProps}
                   ref={provided.innerRef}
                 >
-                  <h1>
-                    А.Чи мэргэжил сонгохдоо юу бодолцож сонголт хийсэн бэ?
-                  </h1>
+                  <h1>Б. Чи сонгосон мэргэжлийн талаар юу мэдэх вэ ?</h1>
                   <h5 className="text-red-500 text-sm">
                     Доорх хариултуудыг ач холбогдлоор нь дэс дугаарлана уу.
                   </h5>
@@ -113,4 +111,4 @@ const DndExample = () => {
   );
 };
 
-export default DndExample;
+export default DndExample2;
