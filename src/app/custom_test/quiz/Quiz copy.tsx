@@ -15,6 +15,7 @@ type Props = {
 let chartData: number[] = [];
 const Quiz = ({ questions }: Props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
+  const [currentStep, setCurrentStep] = React.useState(0);
   const [userAnswers, setUserAnswers] = React.useState<Record<number, string>>(
     {}
   );
@@ -40,6 +41,13 @@ const Quiz = ({ questions }: Props) => {
   const sport_military = "Спорт ба цэрэгжилт";
   var sport_military_count = 0;
 
+  const handleStepQuestion = (step: number) => {
+    const newStep = currentStep + step;
+    console.log(newStep);
+    if (newStep < 0 || newStep >= 5) return;
+    setCurrentStep(newStep);
+  };
+
   const handleOnAnswerClick = (
     answer: string,
     answer_val: string,
@@ -50,6 +58,10 @@ const Quiz = ({ questions }: Props) => {
     setUserAnswers((prev) => ({ ...prev, [currentQuestionIndex]: answer }));
 
     userAnswers[currentQuestionIndex] = answer;
+
+    // const arr = [1, 2, 3, 4];
+    // const res = arr.slice(0, 3).map((e) => e);
+    // console.log(res);
 
     const propertyNames = Object.keys(userAnswers);
 
@@ -166,31 +178,45 @@ const Quiz = ({ questions }: Props) => {
     <>
       <div className="text-black text-center mt-2">
         <div className="md:grid grid-cols-2 gap-1">
-          {/* { for(let i = 0; i < questions.length; i++) { }}  */}
-          {questions.map(function (question, i) {
-            return (
-              <CustomCard
-                key={question.question + question.answers[i] + i}
-                question={question}
-                answerType={question.question_type}
-                currentQuestionIndex={i}
-                userAnswer={userAnswers[currentQuestionIndex]}
-                onClick={handleOnAnswerClick}
-              />
-            );
-          })}
+          {questions
+            .slice(10 * currentStep, 10 * currentStep + 10)
+            .map(function (question, i) {
+              return (
+                <CustomCard
+                  key={
+                    question.question + question.answers[i] + i * currentStep
+                  }
+                  question={question}
+                  answerType={question.question_type}
+                  currentQuestionIndex={i}
+                  userAnswer={userAnswers[currentQuestionIndex]}
+                  onClick={handleOnAnswerClick}
+                />
+              );
+            })}
         </div>
-        {currentQuestionIndex === questions.length - 1 ? (
-          <div className=" mt-8 ">
-            <Button
+        {/* {currentQuestionIndex === questions.length - 1 ? ( */}
+        <div className=" flex justify-between mt-16 ">
+          <Button
+            text="Өмнөх"
+            btn_next={false}
+            onClick={() => handleStepQuestion(-1)}
+          />
+          <Button
+            text={currentStep === 5 ? "Дуусгах" : "Дараах"}
+            btn_next={false}
+            onClick={() => handleStepQuestion(1)}
+          />
+          {/* <Button
               text="Дуусгах"
               onClick={handleResultQuestion}
               btn_next={false}
-            />
-          </div>
-        ) : (
+            /> */}
+        </div>
+        {/* ) : (
           ""
-        )}
+        ) */}
+        {/* } */}
       </div>
     </>
   ) : (

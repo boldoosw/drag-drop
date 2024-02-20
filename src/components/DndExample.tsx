@@ -12,6 +12,8 @@ interface Cards {
     id: number;
     name: string;
     bg: string;
+    title: string;
+    content: string;
   }[];
 }
 const DndExample = () => {
@@ -61,49 +63,75 @@ const DndExample = () => {
       {/* <h1 className="text-center mt-8 mb-3 font-bold text-[25px] ">
         Drag and Drop Application
       </h1> */}
-      <div className="w-full flex gap-4 justify-between my-5 mx-4 flex-col lg:flex-row">
+      <div className="max-w-[800px] w-full m-auto justify-between my-5 mx-4 flex-col lg:flex-row">
         {data.map((val, index) => {
+          function getContent(index: number) {
+            return val.components[index].content;
+            //  console.log(val.components[index].content);
+          }
+          function getTitle(index: number) {
+            return val.components[index].title;
+            //  console.log(val.components[index].content);
+          }
+
           return (
             <Droppable key={index} droppableId={`droppable${index}`}>
               {(provided) => (
-                <div
-                  className="p-5 w-full bg-white  border-gray-400 border border-dashed"
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                >
-                  <h1>
-                    А.Чи мэргэжил сонгохдоо юу бодолцож сонголт хийсэн бэ?
-                  </h1>
-                  <h5 className="text-red-500 text-sm">
-                    Доорх хариултуудыг ач холбогдлоор нь дэс дугаарлана уу.
-                  </h5>
-                  {val.components?.map((component, index) => (
-                    <Draggable
-                      key={component.id}
-                      draggableId={component.id.toString()}
-                      index={index}
-                    >
-                      {(provided) => (
-                        <div className="flex flex-row ">
-                          <div
-                            className={`mx-1 px-1 py-1 my-1  ${bColor[index]}`}
-                          >
-                            {index + 1}
-                          </div>
-                          <div
-                            className={`mx-1 px-1 py-1 my-1 w-full min-width: 300px border-radius: 5px;  ${bColor[index]}`}
-                            {...provided.dragHandleProps}
-                            {...provided.draggableProps}
-                            ref={provided.innerRef}
-                          >
-                            {component.name}
-                          </div>
-                        </div>
-                      )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </div>
+                <>
+                  <div
+                    className="p-5 w-full bg-white  border-gray-400 border border-dashed"
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                  >
+                    <h1>
+                      А.Чи мэргэжил сонгохдоо юу бодолцож сонголт хийсэн бэ?
+                    </h1>
+                    <h5 className="text-red-500 text-sm">
+                      Доорх хариултуудыг ач холбогдлоор нь дэс дугаарлана уу.
+                    </h5>
+                    {val.components?.map((component, index) => (
+                      <Draggable
+                        key={component.id}
+                        draggableId={component.id.toString()}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <>
+                            <div className="flex flex-row ">
+                              <div
+                                className={`mx-1 px-1 py-1 my-1  ${bColor[index]}`}
+                              >
+                                {index + 1}
+                              </div>
+                              <div
+                                className={`mx-1 px-1 py-1 my-1 w-full min-width: 300px border-radius: 5px;  ${bColor[index]}`}
+                                {...provided.dragHandleProps}
+                                {...provided.draggableProps}
+                                ref={provided.innerRef}
+                              >
+                                {component.name}
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+
+                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
+                      <h2 className="bg-white  font-bold">{getTitle(0)}</h2>
+                      {getContent(0)}
+                    </div>
+                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
+                      <h2 className="bg-white  font-bold">{getTitle(1)}</h2>
+                      {getContent(1)}
+                    </div>
+                    <div className="p-3 border m-2 border-gray-900 border-dashed relative mt-12">
+                      <h2 className="bg-white  font-bold">{getTitle(2)}</h2>
+                      {getContent(2)}
+                    </div>
+                  </div>
+                </>
               )}
             </Droppable>
           );
