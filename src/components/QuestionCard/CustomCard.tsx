@@ -34,7 +34,7 @@ const CustomCard: React.FC<Props> = ({
             select-none  max-w-[400] w-full  rounded-[10px]
               border border-gray-300 rounded-lg shadow dark:bg-white dark:border-gray-200  "
       >
-        <div className="w-full m-1 ">{question.question}</div>
+        <div className="w-full m-1">{question.question}</div>
         <div
           key={
             question.question +
@@ -62,7 +62,7 @@ const CustomCard: React.FC<Props> = ({
               }
               className={`flex items-center mr-1 rounded `}
             >
-              <h5 className=" m-1 text-md tracking-tight text-gray-900 dark:text-white">
+              <h5 className=" m-1 text-md tracking-tight  text-gray:900 dark:text-gray-900 ">
                 {answer}
               </h5>
             </div>
