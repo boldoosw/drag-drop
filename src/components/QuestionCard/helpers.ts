@@ -3,7 +3,7 @@ export const getBGColor = (userAnswer: string | undefined,  answer: string): str
 
   // if ((isAnswerCorrect === true && answer === userAnswer) || (isAnswerCorrect === false && answer === correctAnswer))
     if (answer === userAnswer)
-    return 'bg-sky-500 text-white';
+    return 'bg-sky-500 text-white dark:bg-sky-500 ';
 
   // if (isAnswerCorrect === false && answer === userAnswer) return 'bg-[#AC5050] text-white';
 
