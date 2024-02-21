@@ -37,7 +37,7 @@ const QuestionCard: React.FC<Props> = ({
             onClick={() => onClick(answer, answer_val[i], currentQuestionIndex)}
             className={`${getBGColor(userAnswer, answer)}  p-2 cursor-pointer 
             select-none font-bold min-h-[45px] max-w-[400] w-full  rounded-[10px]
-              border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  `}
+              border border-gray-300 rounded-lg shadow dark:bg-gray-200 dark:border-gray-700  `}
           >
             <Image
               src={`/images/climov_images/${answer_pic[i]}`}
