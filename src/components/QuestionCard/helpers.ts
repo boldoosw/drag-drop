@@ -7,8 +7,8 @@ export const getBGColor = (userAnswer: string | undefined,  answer: string): str
 
   // if (isAnswerCorrect === false && answer === userAnswer) return 'bg-[#AC5050] text-white';
 
-  // return 'bg-white text-[#9F50AC]';
-  return 'bg-sky-500 text-white dark:text-white dark:bg-sky-500';
+  return 'bg-white text-[#9F50AC]';
+  // return 'bg-sky-500 text-white dark:text-white dark:bg-sky-500';
 };
 
 export const getBGColor1 = (isSelected:boolean): string => {
