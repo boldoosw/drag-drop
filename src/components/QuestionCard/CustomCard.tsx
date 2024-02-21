@@ -32,7 +32,7 @@ const CustomCard: React.FC<Props> = ({
         className="bg-gray-100 flex
         flex-row justify-between items-center cursor-pointer 
             select-none  max-w-[400] w-full  rounded-[10px]
-              border border-gray-300 rounded-lg shadow dark:bg-white dark:border-gray-200  "
+              border border-gray-400 rounded-lg shadow dark:bg-white dark:border-gray-200  "
       >
         <div className="w-full m-1">{question.question}</div>
         <div

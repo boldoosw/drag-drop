@@ -164,34 +164,32 @@ const Quiz = ({ questions }: Props) => {
 
   return !showResult ? (
     <>
-      <div className="text-black text-center mt-2">
-        <div className="md:grid grid-cols-2 gap-1">
-          {/* { for(let i = 0; i < questions.length; i++) { }}  */}
-          {questions.map(function (question, i) {
-            return (
-              <CustomCard
-                key={question.question + question.answers[i] + i}
-                question={question}
-                answerType={question.question_type}
-                currentQuestionIndex={i}
-                userAnswer={userAnswers[currentQuestionIndex]}
-                onClick={handleOnAnswerClick}
-              />
-            );
-          })}
-        </div>
-        {currentQuestionIndex === questions.length - 1 ? (
-          <div className=" mt-8 ">
-            <Button
-              text="Дуусгах"
-              onClick={handleResultQuestion}
-              btn_next={false}
+      <div className="md:grid grid-cols-2 gap-1">
+        {/* { for(let i = 0; i < questions.length; i++) { }}  */}
+        {questions.map(function (question, i) {
+          return (
+            <CustomCard
+              key={question.question + question.answers[i] + i}
+              question={question}
+              answerType={question.question_type}
+              currentQuestionIndex={i}
+              userAnswer={userAnswers[currentQuestionIndex]}
+              onClick={handleOnAnswerClick}
             />
-          </div>
-        ) : (
-          ""
-        )}
+          );
+        })}
       </div>
+      {currentQuestionIndex === questions.length - 1 ? (
+        <div className=" mt-8 ">
+          <Button
+            text="Дуусгах"
+            onClick={handleResultQuestion}
+            btn_next={false}
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </>
   ) : (
     <div className="text-black text-center mt-8">
